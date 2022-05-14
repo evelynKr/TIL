@@ -128,6 +128,30 @@ console.log(!!1); // true
 
 ## 5. 할당 연산자
 
+### 할당 연산자 (Assignment oprators)
+
+- 변수에 값을 할당하는 것.
+- 하나의 `equal` 사인을 쓰면 할당을 할 수 있다.
+
+```javascript
+let a = 1;
+a = a + 2;
+console.log(a); // 3
+
+a += 2; // a = a + 2; 축약버전
+console.log(a); // 5
+
+a -= 2; // a = a - 2; 축약버전
+console.log(a); // 3
+
+a *= 2; // a = a * 2; 축약버전
+console.log(a); // 6
+
+a /= 2;
+a %= 2;
+a **= 2;
+```
+
 <br />
 
 ## 6. 증감 연산자
