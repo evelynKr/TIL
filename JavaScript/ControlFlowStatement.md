@@ -74,6 +74,41 @@ console.log(emoji);
 
 ## 04. 제어문 연습퀴즈
 
+### 퀴즈!
+
+- num의 숫자가 짝수이면 👍, 홀수라면 👎을 출력하도록 해라!
+
+- 내가 푼 방식
+
+```javascript
+let num = 2;
+// if
+if ((num %= 3)) {
+  console.log('👍');
+} else {
+  console.log('👎');
+}
+
+// ternary
+num %= 3 ? console.log('👍') : console.log('👎');
+```
+
+- 정답
+
+```javascript
+let num = 2;
+// if
+if (num % 2 === 0) {
+  console.log('👍');
+} else {
+  console.log('👎');
+}
+
+// ternary
+let emoji = num % 2 === 0 ? '👍' : '👎';
+console.log(emoji);
+```
+
 <br />
 
 ## 05. 스위치(언제 if를 쓰고 언제 switch를 쓰나?)
