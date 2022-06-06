@@ -111,11 +111,99 @@ console.log(emoji);
 
 <br />
 
-## 05. 스위치(언제 if를 쓰고 언제 switch를 쓰나?)
+## 05. 스위치
+
+### switch 조건문 (Switch Conditional Statement)
+
+- 정해진 범위 안의 값에 대해 특정한 일을 해야 하는 경우
+
+```javascript
+let day = 10; // 0:월요일, 1: 화요일... 6: 일요일
+
+switch (day) {
+  case 0:
+    dayName = '월요일';
+    break;
+  case 1:
+    dayName = '화요일';
+    break;
+  case 2:
+    dayName = '수요일';
+    break;
+  case 3:
+    dayName = '목요일';
+    break;
+  case 4:
+    dayName = '금요일';
+    break;
+  case 5:
+    dayName = '토요일';
+    break;
+  case 6:
+    dayName = '일요일';
+    break;
+  default:
+    console.log('해당하는 요일이 없음!');
+}
+console.log(dayName);
+
+let condition = 'bad'; // okay, good  -> 좋음!, bad -> 나쁨!
+let text;
+switch (condition) {
+  case 'okay':
+  case 'good':
+    text = '좋음!';
+    break;
+  case 'bad':
+    text = '나쁨!';
+    break;
+}
+console.log(text);
+```
 
 <br />
 
 ## 06. 반복문 for
+
+### for 반복문 (For Loop Statement)
+
+- for(변수선언문; 조건식; 증감식) { }
+- 실행순서:
+  1. 변수선언문
+  2. 조건식의 값이 참이면 { } 코드블럭을 수행
+  3. 증감식을 수행
+  4. 조건식이 거짓이 될때까지 2번과 3번을 반복함
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  // 변수선언문: for문을 얼마만큼 반복할 것인지 얼마나 기억하기위한 변수이다.
+  // i을 0으로 초기화
+  // 반복할 조건을 적어줌
+  // 얼마나 증가할건지 적어줌
+  console.log(i); // i가 0부터 5보다 커질때까지 출력
+}
+
+// 중첩 for문을 작성할 수 있다.
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 5; j++) {
+    console.log(i, j);
+  }
+}
+
+// 무한루프 💩
+// for (;;) {
+// }
+
+// 반복문 제어: continue, break;
+for (let i = 0; i < 20; i++) {
+  if (i === 10) {
+    continue;
+    console.log('i가 드디어 10이 되었다!');
+    break;
+  }
+  console.log(i);
+}
+```
 
 <br />
 
