@@ -211,6 +211,71 @@ for (let i = 0; i < 20; i++) {
 
 ## 07. 반복문 while
 
+### while 반복문 (While Loop Statement)
+
+- while(조건) { }
+- 조건이 false가 될때까지 {} 코드를 반복 실행
+- 조건이 맞을 때만 실행하고 싶다면 while
+- 조건이 맞으면 실행, 안 맞으면 실행하지 않음
+
+```javascript
+let num = 5;
+while (num >= 0) {
+  console.log(num);
+  num--;
+}
+
+let isActive = false;
+let i = 0;
+while (isActive) {
+  console.log('아직살아있다!');
+  if (i === 1000) {
+    break;
+  }
+  i++;
+}
+```
+
+- do {} while ();
+- 꼭 한번은 무조건 실행하고 싶다면 do-while
+- 일단 무조건 실행하고 조건을 검사
+
+```javascript
+do {
+  console.log('do-while 아직살아있다!');
+} while (isActive);
+```
+
 <br />
 
 ## 08. 제어문에서 자주 쓰이는 연산자
+
+### 논리연산자 (Logical operator)
+
+- && 그리고
+- || 또는
+- ! 부정(단항연산자에서 온것)
+- !! 불리언값으로 변환 (단항연산자 응용버전)
+
+```javascript
+let num = 8;
+if (num >= 0 || num > 20) {
+  console.log('👍');
+}
+if (num != 9) {
+  console.log('🙏');
+}
+
+console.log(true && true); // true
+console.log(true && false); // false
+console.log(false && true); // false
+console.log(false && false); // false
+
+console.log(true || true); // true
+console.log(true || false); // true
+console.log(false || true); // true
+console.log(false || false); // false
+
+console.log(!'text'); // false
+console.log(!!'text'); // true
+```
