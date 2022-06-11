@@ -304,7 +304,7 @@ console.log(vlaue);
 - 나쁜 예시
 
 ```javascript
-function displayObj(obj){
+function displayObj(obj ){
   obj.name = 'Bob'; // ❌❌❌외부로부터 주어진 인자(오브젝트)를 내부에서 변경하면 안됨!
   console.log(obj);
 }
@@ -314,4 +314,11 @@ displayObj(evelyn);
 console.log(evelyn);
 ```
 
--
+- 변경하고 싶으면
+
+```javascript
+function changeName(obj) {
+  // 이름부터 변경하는 느낌을 주도록 !
+  return { ...obj, name: 'Bob' }; // 반환할때는 새로운 오브젝트 만들기 !
+}
+```
