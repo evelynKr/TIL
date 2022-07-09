@@ -68,7 +68,7 @@ text.trim(); // String 객체
 
 ```js
 console.log(globalThis); // 전역 객체를 가리킨다.
-console.log(this); // 전역 객체를 가리킨다. -> 노드에서 this는 모듈을 가리키긴 하지만 대체로 전역을 가르틴다.
+console.log(this); // 전역 객체를 가리킨다. -> 노드에서 this는 모듈을 가리키긴 하지만 대체로 전역을 가르킨다.
 console.log(Infinity);
 console.log(NaN);
 console.log(undefined);
@@ -100,8 +100,7 @@ console.log(parseInt('11')); // 11
 
 #### URL (URI 하위 개념)
 
-> URI (Uniform Resource Identifier) : 어떤 리소스를 나타낼 수 있는 단 하나의 고유한 주소나 아이디 같은 걸 가리킨다.
-> URL : 웹사이트를 나타낼 수 있는 유일한 주소이다.
+> `URI (Uniform Resource Identifier)` : 어떤 리소스를 나타낼 수 있는 단 하나의 고유한 주소나 아이디 같은 걸 가리킨다. <br /> `URL` : 웹사이트를 나타낼 수 있는 유일한 주소이다.
 > URL은 아스키 문자로만 구성되어야 한다.
 > 그래서 주소에 한글이나 특수문자를 쓴다면 이스케이프 처리를 해줘야한다.
 
