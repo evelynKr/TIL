@@ -252,4 +252,18 @@ if (Number.EPSILON > 0 && Number.EPSILON < 1) {
 
 const num = 0.1 + 0.2 - 0.2;
 console.log(num); // 0.10000000000000003
+
+function isEqual(original, expected) {
+  return original === expected;
+}
+console.log(isEqual(1, 1)); // true
+console.log(isEqual(0.1, 0.1)); // true
+console.log(isEqual(num, 0.1)); // false
+
+function isEqual(original, expected) {
+  return Math.abs(original - expected) < Number.EPSILON;
+}
+console.log(isEqual(1, 1)); // true
+console.log(isEqual(0.1, 0.1)); // true
+console.log(isEqual(num, 0.1)); // true
 ```
