@@ -120,3 +120,136 @@ console.log(decoded);
 const part = '글로벌컴퍼니.com';
 console.log(encodeURIComponent(part));
 ```
+
+<br />
+
+## 4. 불리언 함수들
+
+### 불리언 함수 (boolean object)
+
+- boolean도 boolean에 해당하는 래퍼 객체가 있다.
+- boolean 원시타입도 해당하는 객체 타입이 있지만 객체 안에 유용한 함수는 없다.
+- `valueOf` : boolean의 value를 출력할 수 있게 도와준다.
+
+```js
+// 레퍼 객체로 new Boolean(true) 만들어준다.
+const isTrue = new Boolean(true);
+
+// 객체를 사용하면 메모리를 더 소비할 수 있기때문에 굳이 객체를 사용하지않는다.
+const isTrue = true;
+console.log(isTrue.valueOf()); // true
+
+/**
+ * Falshy : 거짓이 되는 값들
+ * 0
+ * -0
+ * null
+ * NaN
+ * undefined
+ * ''
+ */
+
+/**
+ * Truthy : 참인 값들
+ * 1
+ * '0'
+ * 'false'
+ * []
+ * {}
+ */
+```
+
+<br />
+
+## 4. 숫자 함수들
+
+### 숫자 함수 (number object)
+
+- `Number()` : 생성자를 통해서 오브젝트 인스턴트를 만들 수 있다.
+
+- Static properties (클래스만으로 접근이 가능한 속성들)
+
+  - `Number.EPSILON` : 두 숫자(0과 1) 사이의 나타낼 수 있는 가장 작은 숫자.
+  - `Number.MAX_SAFE_INTEGER` : 정수에서 사용할 수 있는 최고의 값. (최대 정수: 2^53 - 1)
+  - `Number.MIN_SAFE_INTEGER` : 정수에서 사용할 수 있는 최소의 값. (최소 정수: -(2^53 - 1))
+  - `Number.MAX_VALUE` : 가장 큰 양수.
+  - `Number.MIN_VALUE` : 가장 작은 양수. (즉, 0보다 크지만 0에 가장 가까운 양수)
+  - `Number.NaN` : "Not a Number"(숫자가 아님)을 나타내는 특별한 값.
+  - `Number.NEGATIVE_INFINITY` : 음의 무한대를 나타내는 특수한 값.
+  - `Number.POSITIVE_INFINITY` : 양의 무한대를 나타내는 특수한 값.
+  - `Number.prototype` : Number 객체에 속성을 추가.
+
+- 정적 메소드(클래스에서 접근이 가능한 클래스 함수)
+
+  - `Number.isNaN()` : 주어진 값이 NaN인지 확인.
+  - `Number.isFinite()` : 주어진 값이 유한수 인지 확인.
+  - `Number.isInteger()` : 주어진 값이 정수인지 확인.
+  - `Number.isSafeInteger()` : 주어진 값이 안전한 정수(-(2^53 - 1)과 2^53 - 1 사이의 정수)인지 확인.
+  - `Number.parseFloat(string)` : 전역 객체 `parseFloat()`와 동일한 값.
+  - `Number.parseInt(string, [radix])` : 전역 객체 `parseInt()`와 동일한 값.
+
+- 인스턴스 메소드 (Number라는 객체를 만들어서 접근 가능한 함수)
+  - `Number.prototype.toExponential(fractionDigits)` : 지수 표기법으로 표기된 숫자를 표현하는 문자열을 반환.
+  - `Number.prototype.toFixed(digits)` : 고정 소수점 표기법으로 숫자를 표현하는 문자열을 반환.
+  - `Number.prototype.toLocaleString([locales [, options]])` : 이 숫자를 해당 언어 방식으로 표현된 문자열을 반환.
+  - `Number.prototype.toPrecision(precision)` : 고정 소수점 또는 지수 표기법으로 지정된 정밀도로 숫자를 표현하는 문자열을 반환.
+  - `Number.prototype.toString([radix])` : 지정한 기수("base")에서 지정한 개체를 표현하는 문자열을 반환.
+  - `Number.prototype.valueOf()` : 명시된 객체의 원시 값을 반환.
+
+```js
+const num1 = 123;
+const num2 = new Number(123);
+console.log(typeof num1); // 원시타입 123, number
+console.log(typeof num2); // 객체타입 [Number: 123], object
+
+console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+console.log(Number.MIN_VALUE); // 5e-324
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
+console.log(Number.NaN); // NaN
+console.log(Number.NEGATIVE_INFINITY); // -Infinity
+console.log(Number.POSITIVE_INFINITY); // Infinity
+
+// 위 예시들은 언제 사용하느냐?
+// num1이 숫자인지 아닌지 확인하고 싶다면 비교할때 사용.
+if (num1 === Number.NaN) {
+}
+if (Number.isNaN()) {
+}
+```
+
+### 지수 표기법
+
+- 매우 크거나 작은 숫자를 표기할때 사용
+- 10의 n승으로 표기
+
+```js
+const num3 = 102;
+console.log(num3.toExponential()); // 1.02e+2
+// 102라는 큰 숫자를 toExponential()함수를 사용해 지수로 만든다.
+```
+
+### 반올림하여 문자열로 변환
+
+```js
+const num4 = 1234.12;
+console.log(num4.toFixed()); // 1234
+console.log(num4.toString()); // 1234.12
+console.log(num4.toLocaleString('ar-EG'));
+```
+
+### 원하는 자릿수까지 유효하도록 반올림
+
+```js
+console.log(num4.toPrecision(5)); // 1234.1
+console.log(num4.toPrecision(4)); // 1234
+console.log(num4.toPrecision(2)); // 1.2e+3  -> 전체 자릿수 표기가 안될떄는 지수표기법으로 변환
+
+// 0과 1사이에서 나타낼 수 있는 가장 작은 숫자
+if (Number.EPSILON > 0 && Number.EPSILON < 1) {
+  console.log(Number.EPSILON); // 2.220446049250313e-16
+}
+
+const num = 0.1 + 0.2 - 0.2;
+console.log(num); // 0.10000000000000003
+```
