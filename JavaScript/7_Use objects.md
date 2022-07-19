@@ -161,7 +161,7 @@ console.log(isTrue.valueOf()); // true
 
 <br />
 
-## 4. 숫자 함수들
+## 5. 숫자 함수들
 
 ### 숫자 함수 (number object)
 
@@ -266,4 +266,59 @@ function isEqual(original, expected) {
 console.log(isEqual(1, 1)); // true
 console.log(isEqual(0.1, 0.1)); // true
 console.log(isEqual(num, 0.1)); // true
+```
+
+<br />
+
+## 6. 수학 관련 함수들
+
+### 수학 관련 함수들
+
+#### Math object
+
+- 숫자를 이용해 계산을 하는 유용한 함수들이 들어있다.
+- static properties, method 함수들을 많이 가지고 있기 때문에 여기서 사용하고있다. 따로 Math 객체를 직접 만들 일은 거의 없다.
+
+```js
+// 오일러의 상수, 자연로그의 밑
+console.log(Math.E); // 2.718281828459045
+
+// 원주율 PI값
+console.log(Math.PI); // 3.141592653589793
+```
+
+- static method
+
+```js
+// 절대값
+console.log(Math.abs(-10)); // 10
+
+// 소수점 이하를 올림
+console.log(Math.ceil(1.4)); // 2
+
+// 소수점 이하를 내림
+console.log(Math.floor(1.4)); // 1
+
+// 소수점 이하를 반올림
+console.log(Math.round(1.4)); // 1
+console.log(Math.round(1.7)); // 2
+
+// 정수만 반환
+console.log(Math.trunc(1.5432)); // 1
+
+// 최대, 최소 값을 찾기
+console.log(Math.max(1, 3. 5)); // 5
+console.log(Math.min(1, 3. 5)); // 1
+
+// 거듭제곱
+console.log(3 ** 2); // 9
+console.log(Math.pow(3, 2)); // 9
+
+// 제곱근
+console.log(Math.sqrt(9)); // 3
+
+// 0~1 사이의 랜덤한 값을 반환
+console.log(Math.random());
+// 1~10
+console.log(Math.floor(Math.random() * 10 + 1)); // 1~10 사이 랜덤값들
 ```
